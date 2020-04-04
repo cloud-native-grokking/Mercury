@@ -1,0 +1,10 @@
+Installing a MySQL container
+https://medium.com/@crmcmullen/how-to-run-mysql-in-a-docker-container-on-macos-with-persistent-local-data-58b89aec496a
+https://medium.com/@crmcmullen/how-to-run-mysql-8-0-with-native-password-authentication-502de5bac661
+https://stackoverflow.com/a/50130875/6085492
+
+JPA config
+https://www.baeldung.com/spring-open-session-in-view
+
+Jcoco report
+clean jacoco:prepare-agent install jacoco:report

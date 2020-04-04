@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "com.cloudnative.grokking.mercury.proto.api";
+option java_multiple_files = true;
+
+package com.cloudnative.grokking.mercury.proto.api;
+
+service PingGRpcService {
+    rpc ping (PingRequest) returns (PingResponse);
+}
+
+message PingRequest {
+    string request = 1;
+}
+
+message PingResponse {
+    string response = 1;
+    int32 returncode = 2;
+}
+
