@@ -1,8 +1,8 @@
-# Derived from official mysql image (our base image)
-FROM mysql
-# Add a database
+# Please name the image "mysql-mercury" by using:
+# docker build -t mysql-mercury .
+
+
+FROM mysql:8.0
+MAINTAINER nghiatn_pearly
 ENV SPRING_APPLICATION_JSON="SB"
-# Add the content of the sql-scripts/ directory to your image
-# All scripts in docker-entrypoint-initdb.d/ are automatically
-# executed during container startup
-COPY ./sql-scripts/ /docker-entrypoint-initdb.d/
+COPY ./scripts/ /docker-entrypoint-initdb.d/

@@ -9,12 +9,17 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Optional;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.*;
 
 /**
  * @author nghiatn
@@ -48,4 +53,20 @@ public class GrpcPingControllerTest extends GrpcServerTestBase {
         assertThat(response.getReturncode(), Is.is(1));
     }
 
+    //    @Test
+//    public void test_out_proccess() {
+//        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8072)
+//                .usePlaintext()
+//                .build();
+//
+//        PingGRpcServiceGrpc.PingGRpcServiceBlockingStub stub
+//                = PingGRpcServiceGrpc.newBlockingStub(channel);
+//
+//        PingResponse response = stub.ping(PingRequest.newBuilder().build().newBuilder()
+//                .setRequest("gRPCsd")
+//                .build());
+//
+//        assertThat(response.getResponse(), Is.is("gRPCsd-ServerHandled!"));
+//        channel.shutdown();
+//    }
 }

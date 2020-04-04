@@ -1,14 +1,9 @@
-FROM alpine/ubuntu-java
-MAINTAINER nghiatn
-COPY spring-boot-skeleton-0.0.1-SNAPSHOT.jar /opt/mercury/lib/
+# Please name the image "mercury-service" by using:
+# docker build -t mercury-service .
+
+FROM openjdk:8
+MAINTAINER nghiatn_pearly
 ENV SPRING_APPLICATION_JSON="SB"
-ENTRYPOINT ["/bin/bash"]
-VOLUME /var/lib/mercury/data
+ADD ./target/mercury-service-spring-boot.jar app/mercury-service-spring-boot.jar
 EXPOSE 8082
-
-
-
-FROM openjdk:12
-ADD target/user-mysql.jar user-mysql.jar
-EXPOSE 8089
-ENTRYPOINT ["java", "-jar", "user-mysql.jar"]
+ENTRYPOINT ["java", "-jar", "app/mercury-service-spring-boot.jar", "--spring.profiles.active=docker"]
