@@ -1,13 +1,12 @@
 # Compiled class file
 /target/*
-*.class
 
 # Log file
 *.log
 
 #Intellij
 *.idea*
-*project.iml
+*.iml
 
 # BlueJ files
 *.ctxt
