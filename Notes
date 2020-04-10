@@ -1,5 +1,10 @@
+04-04-2020
 Manually run docker container for all services:
 
 docker network create mercury_network
 docker run --name mysql-mercury-container -p 3306:3306 -d --network mercury_network -e MYSQL_ROOT_PASSWORD=root mysql-mercury --default-authentication-plugin=mysql_native_password
 docker run -p 8082:8082 -d --network mercury_network mercury-service
+
+11-04-2020
+For now, just run this for 3 instances of Mercury to be launched with a detached load-balancer:
+docker-compose up --scale mercury-service=3
