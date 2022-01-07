@@ -26,7 +26,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <!-- Dependencies version -->
         <springboot.version>2.0.4.RELEASE</springboot.version>
-        <protobuf.version>3.7.1</protobuf.version>
+        <protobuf.version>3.16.1</protobuf.version>
         <protobufjavaformat.version>1.4</protobufjavaformat.version>
         <grpc.version>1.22.1</grpc.version>
         <lombok.version>1.16.20</lombok.version>
